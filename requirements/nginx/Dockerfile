@@ -7,8 +7,8 @@ FROM alpine:3.19
 # && install nginx without caching the package files -> smaller container size
 RUN apk update && apk upgrade && apk add --no-cache nginx
 
-RUN mkdir -p /usr/share/nginx/html
-RUN echo "<!DOCTYPE html><html><body><h1>Welcome to Nginx!</h1></body></html>" > /usr/share/nginx/html/index.html
+RUN mkdir -p /var/www/
+RUN echo "<!DOCTYPE html><html><body><h1>Welcome to Nginx!</h1></body></html>" > /var/www/index.html
 # COPY ./conf/nginx.conf /etc/nginx/nginx.conf
 
 # this is the command that will run when container starts
