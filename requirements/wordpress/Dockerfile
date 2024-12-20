@@ -1,5 +1,9 @@
-FROM alpine:3.19
+FROM php:8.0.2-fpm
 
-RUN apk update && apk upgrade && apk add --no-cache \ php-fpm
+RUN apt-get update && apt-get install -y \
+    git \
+    curl \
+    zip \
+    unzip
 
-CMD ["php-fpm8", "-F"]
+WORKDIR /var/www
